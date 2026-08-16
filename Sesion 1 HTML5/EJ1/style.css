@@ -1,6 +1,4 @@
-/* =========================================
-   Variables y Reset
-   ========================================= */
+
 :root {
     --primary-color: #2563eb;
     --text-color: #1e293b;
@@ -27,9 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================================
-   Fondo Dinámico Animado
-   ========================================= */
 .background-shapes {
     position: fixed;
     width: 100vw;
@@ -78,9 +73,7 @@ body {
     100% { transform: translate(30px, 50px) scale(1.1); }
 }
 
-/* =========================================
-   Clase Core: Glassmorphism
-   ========================================= */
+
 .glass-panel {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -90,9 +83,7 @@ body {
     border-radius: 20px;
 }
 
-/* =========================================
-   Barra Lateral (Aside)
-   ========================================= */
+
 .sidebar {
     position: fixed;
     top: 20px;
@@ -137,9 +128,7 @@ body {
     color: var(--primary-color);
 }
 
-/* =========================================
-   Contenido Principal (Main)
-   ========================================= */
+
 main {
     margin-left: 290px; /* Ancho del sidebar + márgenes */
     padding: 20px 40px 60px 40px;
