@@ -1,0 +1,282 @@
+/* =========================================
+   Variables y Reset
+   ========================================= */
+:root {
+    --primary-color: #2563eb;
+    --text-color: #1e293b;
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: #e2e8f0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   Fondo Dinámico Animado
+   ========================================= */
+.background-shapes {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(135deg, #c3cfe2 0%, #e0e7ff 100%);
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.8;
+    animation: float 15s infinite alternate;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: #93c5fd;
+    top: -100px;
+    left: -100px;
+}
+
+.shape-2 {
+    width: 500px;
+    height: 500px;
+    background: #bfdbfe;
+    bottom: -150px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: #d8b4fe;
+    top: 40%;
+    left: 40%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 50px) scale(1.1); }
+}
+
+/* =========================================
+   Clase Core: Glassmorphism
+   ========================================= */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 20px;
+}
+
+/* =========================================
+   Barra Lateral (Aside)
+   ========================================= */
+.sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 250px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.sidebar-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.Menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 12px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.Menu a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+/* =========================================
+   Contenido Principal (Main)
+   ========================================= */
+main {
+    margin-left: 290px; /* Ancho del sidebar + márgenes */
+    padding: 20px 40px 60px 40px;
+    max-width: 1200px;
+}
+
+.section-padding {
+    padding-top: 80px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    padding: 50px;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #475569;
+    margin-bottom: 10px;
+}
+
+/* Grid de Proyectos */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.card p {
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* Timeline Experiencia */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item h4 {
+    color: #64748b;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+/* Habilidades (Tags) */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-tag {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--primary-color);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Contacto */
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive (Móviles) */
+@media (max-width: 900px) {
+    .sidebar {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-bottom: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .sidebar-header h2 {
+        margin-bottom: 0;
+    }
+
+    .Menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
